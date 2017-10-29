@@ -1,0 +1,40 @@
+
+
+GET http://localhost:8080/api/users
+Authorization: Basic YWRtaW46cGFyYW1vcmU=
+
+####
+
+GET http://localhost:8080/api/users?fields=id,name&limit=1&skip=0
+Authorization: Basic YWRtaW46cGFyYW1vcmU=
+
+###
+PUT  http://localhost:8000/api/users/admin
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFyYW1vcmU=
+
+{"name":"admin"}
+
+###
+PATCH http://localhost:8000/api/users/admin
+Content-Type: application/json
+Authorization: Basic YWRtaW46cGFyYW1vcmU=
+
+{"name":"administrador del sistema"}
+
+####
+
+GET http://localhost:8000/api/users/admin
+Authorization: Basic YWRtaW46cGFyYW1vcmU=
+
+###
+
+PUT http://localhost:8000/api/users/admin/posts
+Content-Type: application/x-www-form-urlencoded
+
+title="First Post"&body="Lorem ipsum"
+
+
+###
+
+GET http://localhost:8000/api/users/admin/posts
