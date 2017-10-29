@@ -12,9 +12,7 @@ func NewRouter(next http.Handler) http.Handler {
 	server.HandleFunc("/api/users", controllers.GetUsers(next)).Methods("GET")
 	server.HandleFunc("/api/users/{user}", controllers.PutUser(next)).Methods("PUT")
 	server.PathPrefix("/").HandlerFunc(router(next))
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		server.ServeHTTP(w, r)
-	})
+	return server
 }
 
 func router(next http.Handler) func(w http.ResponseWriter, r *http.Request) {
