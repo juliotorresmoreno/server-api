@@ -1,31 +1,31 @@
 
 
-GET http://localhost:8080/api/users
-Authorization: Basic YWRtaW46cGFyYW1vcmU=
+GET http://localhost:8000/api/users
+apikey: xnyj7eOZpDvttQTK8wPk1oZkWxEfqd26
 
 ####
 
-GET http://localhost:8080/api/users?fields=id,name&limit=1&skip=0
-Authorization: Basic YWRtaW46cGFyYW1vcmU=
+GET http://localhost:8000/api/users?fields=id,name&limit=1&skip=0
+apikey: xnyj7eOZpDvttQTK8wPk1oZkWxEfqd26
 
 ###
 PUT  http://localhost:8000/api/users/admin
 Content-Type: application/json
-Authorization: Basic YWRtaW46cGFyYW1vcmU=
+apikey: xnyj7eOZpDvttQTK8wPk1oZkWxEfqd26
 
 {"name":"admin"}
 
 ###
 PATCH http://localhost:8000/api/users/admin
 Content-Type: application/json
-Authorization: Basic YWRtaW46cGFyYW1vcmU=
+apikey: xnyj7eOZpDvttQTK8wPk1oZkWxEfqd26
 
 {"name":"administrador del sistema"}
 
 ####
 
 GET http://localhost:8000/api/users/admin
-Authorization: Basic YWRtaW46cGFyYW1vcmU=
+apikey: xnyj7eOZpDvttQTK8wPk1oZkWxEfqd26
 
 ###
 
@@ -33,8 +33,3 @@ PUT http://localhost:8000/api/users/admin/posts
 Content-Type: application/x-www-form-urlencoded
 
 title="First Post"&body="Lorem ipsum"
-
-
-###
-
-GET http://localhost:8000/api/users/admin/posts

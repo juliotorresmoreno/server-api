@@ -27,9 +27,8 @@ func NewServer() *http.Server {
 	router := c.Then(http.StripPrefix("/api", api))
 	server.PathPrefix("/api").Handler(router)
 
-	var addr = ":8080"
 	return &http.Server{
-		Addr:           addr,
+		Addr:           ":8080",
 		Handler:        server,
 		ReadTimeout:    10 * time.Second,
 		MaxHeaderBytes: 1 << 20,
