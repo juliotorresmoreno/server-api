@@ -9,8 +9,8 @@ import (
 
 func NewRouter(next http.Handler) http.Handler {
 	server := mux.NewRouter().StrictSlash(false)
-	server.HandleFunc("/users", controllers.GetUsers(next)).Methods("GET")
-	server.HandleFunc("/users/admin", controllers.PutUser(next)).Methods("PUT")
+	server.HandleFunc("/api/users", controllers.GetUsers(next)).Methods("GET")
+	server.HandleFunc("/api/users/{user}", controllers.PutUser(next)).Methods("PUT")
 	server.PathPrefix("/").HandlerFunc(router(next))
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		server.ServeHTTP(w, r)

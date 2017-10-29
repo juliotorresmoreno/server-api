@@ -10,7 +10,6 @@ func GetUsers(next http.Handler) func(w http.ResponseWriter, r *http.Request) {
 
 func PutUser(next http.Handler) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello word"))
-		//next.ServeHTTP(w, r)
+		next.ServeHTTP(w, r)
 	}
 }

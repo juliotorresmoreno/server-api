@@ -24,7 +24,7 @@ func NewServer() *http.Server {
 	}
 	c := middlewares()
 
-	router := c.Then(http.StripPrefix("/api/", api))
+	router := c.Then(http.StripPrefix("/api", api))
 	server.PathPrefix("/api").Handler(router)
 
 	var addr = ":8080"
